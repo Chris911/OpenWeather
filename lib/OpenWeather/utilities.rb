@@ -4,6 +4,16 @@ module OpenWeather
   # @author Mostly https://github.com/paradox460/snoo
   module Utilities
 
+    def today
+      time = Time.new
+      time.strftime("%Y-%m-%d")
+    end
+
+    def tomorrow
+      time = Time.now + (60 * 60 * 24)
+      time.strftime("%Y-%m-%d")
+    end
+
     private
     # HTTParty get wrapper. This serves to clean up code, as well as throw webserver errors wherever needed
     #
