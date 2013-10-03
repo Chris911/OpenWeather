@@ -6,6 +6,7 @@ require "OpenWeather/forecast"
 require "OpenWeather/weather"
 require "OpenWeather/utilities"
 require "OpenWeather/exceptions"
+require "OpenWeather/conditions"
 
 module OpenWeather
   class Client
