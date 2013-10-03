@@ -1,6 +1,9 @@
 require 'httparty'
 
 require "OpenWeather/version"
+require "OpenWeather/forecast"
+require "OpenWeather/weather"
+require "OpenWeather/utilities"
 
 module OpenWeather
   class Client
