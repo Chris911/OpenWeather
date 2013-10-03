@@ -30,7 +30,7 @@ module OpenWeather
       self.class.base_uri options[:url]
       self.class.headers @headers
 
-      @units_format = 'celcius'
+      @units_format = 'metric'
       @data_format  = 'json'
       @api_key = options[:api_key] if options[:api_key]
     end
