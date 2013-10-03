@@ -13,7 +13,7 @@ module OpenWeather
       response
     end
 
-    # HTTParty POST wrapper. This serves to clean up code, as well as throw webserver errors wherever needed, same as {#get}
+    # HTTParty POST wrapper. This serves to clean up code, as well as throw webserver errors wherever needed
     #
     def post *args, &block
       response = self.class.post *args, &block
