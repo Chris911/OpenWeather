@@ -1,7 +1,9 @@
 module OpenWeather
   module Weather
     def weather_raw(city)
-      get('/weather', query: { q: city, units: @units_format, mode: @data_format })
+      @city_file.nil? ?
+          get('/weather', query: {q: city, units: @units_format, mode: @data_format}) :
+          JSON.parse(File.read(@city_file))
     end
 
     def weather_min(city)

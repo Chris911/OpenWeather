@@ -1,7 +1,9 @@
 module OpenWeather
   module Forecast
     def forecast_raw(city)
-      get('/forecast', query: { q: city, units: @units_format, mode: @data_format })
+      @city_file.nil? ?
+          get('/forecast', query: {q: city, units: @units_format, mode: @data_format}) :
+          JSON.parse(File.read(@city_file))
     end
 
     def forecast_tomorrow_min(city)

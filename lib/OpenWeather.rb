@@ -36,5 +36,13 @@ module OpenWeather
       @data_format  = 'json'
       @api_key = options[:api_key] if options[:api_key]
     end
+
+    def load_file(file)
+      @city_file = file
+    end
+
+    def unload_file
+      @city_file = nil
+    end
   end
 end

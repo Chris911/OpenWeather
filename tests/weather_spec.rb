@@ -7,8 +7,8 @@ describe "Fetch Weather" do
   it "should get proper coordinates" do
     owc = OpenWeather::Client.new
     weather = owc.weather_raw "Montreal"
-    weather['coord']['lon'].should == -73.587807
-    weather['coord']['lat'].should == 45.508839
+    weather['coord']['lon'].should == -73.59
+    weather['coord']['lat'].should == 45.51
   end
 
   it "should return unknown city" do
