@@ -1,8 +1,11 @@
 module OpenWeather
   module Forecast
     def forecast_raw(city)
+      city.is_number? ?
+          query = {id: city, units: @units_format, mode: @data_format} :
+          query = {q: city, units: @units_format, mode: @data_format}
       @city_file.nil? ?
-          get('/forecast', query: {q: city, units: @units_format, mode: @data_format}) :
+          get('/forecast', query: query) :
           JSON.parse(File.read(@city_file))
     end
 
