@@ -14,6 +14,15 @@ module OpenWeather
       time.strftime("%Y-%m-%d")
     end
 
+    def city_name_from_file
+      @city_file.nil? ? "" : JSON.parse(File.read @city_file)['city']['name']
+    end
+
+    def city_name_from_id(id)
+      weather = weather_raw id
+      weather['name']
+    end
+
     private
     # HTTParty get wrapper. This serves to clean up code, as well as throw webserver errors wherever needed
     #

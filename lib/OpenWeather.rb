@@ -38,7 +38,7 @@ module OpenWeather
     end
 
     def load_file(file)
-      @city_file = file
+      @city_file = file if File.exist? file
     end
 
     def unload_file
